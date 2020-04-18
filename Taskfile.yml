@@ -1,0 +1,27 @@
+# https://taskfile.dev
+version: '2'
+
+tasks:
+  default:
+    deps: [s, o]
+  
+  s:
+    desc: run serve
+    cmds:
+      # include draft
+      - hugo server --buildDrafts
+
+  o:
+    desc: open web server
+    cmds:
+      - open http://localhost:1313/
+
+  b:
+    desc: build to /public
+    cmds:
+      - hugo
+
+  v:
+    cmds:
+      # brew install hugo
+      - hugo version
