@@ -1,5 +1,5 @@
 # https://taskfile.dev
-version: '2'
+version: '3'
 
 tasks:
   default:
@@ -21,7 +21,20 @@ tasks:
     cmds:
       - hugo
 
-  v:
+  try:
+    desc: try as https://gohugo.io/getting-started/quick-start/
     cmds:
-      # brew install hugo
+      - hugo new site quickstart
+
+  v:
+    desc: show hugo version
+    deps: [install-hugo]
+    cmds:
       - hugo version
+
+  install-hugo:
+    desc: install hugo
+    status:
+      - which hugo
+    cmds:
+      - brew install hugo
