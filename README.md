@@ -1,6 +1,5 @@
 # Hello Hugo
 
-
 ## Site New
 
 ```

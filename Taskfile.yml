@@ -16,14 +16,13 @@ tasks:
     cmds:
       - open http://localhost:1313/
 
-  dep:
-    desc: build to /public
+  deploy:
+    desc: build to public as https://gohugo.io/getting-started/usage/#deploy-your-website
     cmds:
-      - hugo -D
+      - rm -fr public
+      - hugo
       # Output will be in ./public/ directory by default
       # (-d/--destination flag to change it, or set publishdir in the config file).
-
-
 
   try-new:
     desc: try as https://gohugo.io/getting-started/quick-start/
@@ -66,3 +65,4 @@ tasks:
       - which hugo
     cmds:
       - brew install hugo
+      - hugo help
